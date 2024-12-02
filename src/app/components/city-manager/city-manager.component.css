@@ -1,0 +1,32 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .add-city {
+    margin-bottom: 20px;
+  }
+  
+  .city-list {
+    margin-bottom: 20px;
+  }
+  
+  .city-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .city-list li {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .weather-info {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

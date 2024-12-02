@@ -1,0 +1,63 @@
+<div class="container">
+  <h1 class="text-center my-4">Weather App</h1>
+
+  <div class="mb-4">
+    <div class="input-group">
+      <input 
+        #cityName 
+        class="form-control" 
+        placeholder="Enter city name" 
+        aria-label="City Name"
+      />
+      <button class="btn btn-primary" (click)="addCity(cityName.value)">
+        Add City
+      </button>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <h2 class="mb-3">City List</h2>
+    <ul class="list-group">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+        *ngFor="let city of cities"
+      >
+        <span>{{ city.name }}</span>
+        <div>
+          <button 
+            class="btn btn-danger btn-sm me-2"
+            (click)="deleteCity(city.name)"
+          >
+            Delete
+          </button>
+          <button 
+            class="btn btn-secondary btn-sm"
+            (click)="getWeather(city.name)"
+          >
+            Show Weather
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card weather-info" *ngIf="weather">
+    <div class="card-body">
+      <h2 class="card-title">Weather</h2>
+      <ul class="list-unstyled">
+        <li>Temperature: {{ weather.temp }}°C</li>
+        <li>Min Temperature: {{ weather.tempMin }}°C</li>
+        <li>Max Temperature: {{ weather.tempMax }}°C</li>
+        <li>Description: {{ weather.description }}</li>
+        <li>Humidity: {{ weather.humidity }}%</li>
+        <li>Country: {{ weather.country }}</li>
+        <li>State: {{ weather.state }}</li>
+        <li>
+          <img 
+            [src]="'https://flagcdn.com/w320/' + (weather.country | lowercase) + '.png'" 
+            alt="Flag of {{ weather.country }}"
+            style="width: 50px; height: auto; margin-left: 10px;">
+        </li>
+      </ul>
+    </div>
+  </div>
