@@ -4,7 +4,7 @@ import { CityManagerComponent } from './components/city-manager/city-manager.com
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: true,
-  imports: [CityManagerComponent], // Zaimportuj standalone component
+  imports: [CityManagerComponent], 
   styleUrl: './app.component.css'
 })
 export class AppComponent {
